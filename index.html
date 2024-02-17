@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Bill Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Split Bill Calculator</h1>
+        <div class="input-group">
+            <label for="billAmount" class="bill-label">What's your bill</label>
+            <input type="number" id="billAmount" placeholder="Enter bill amount">
+        </div>
+        <div class="tip-selection">
+            <label class="tip-label">What's your tip (optional)</label>
+            <select id="tipPercentage">
+                <option value="0.10">10%</option>
+                <option value="0.12">12%</option>
+                <option value="0.15">15%</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="peopleCount">For how many people to split</label>
+            <input type="number" id="peopleCount" value="2">
+        </div>
+        <button id="calculateBtn">Split</button>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

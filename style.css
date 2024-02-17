@@ -1,0 +1,52 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calculator-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #000000; /* Dark grey background for the calculator container */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #00FF00; /* Green color for labels */
+}
+
+.input-group input, #tipPercentage {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #444444; /* Darker grey for inputs */
+    color: #ffffff; /* White text for inputs */
+    width: 80%;
+}
+
+#calculateBtn {
+    background-color: #0f0; /* Bright green background for the button */
+    color: #000000; /* Black text for the button */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 84%;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #222222; /* Even darker grey for the result area */
+    color: #00FF00; /* Green color for result text */
+}
