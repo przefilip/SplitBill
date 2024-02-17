@@ -10,19 +10,24 @@
     <div class="calculator-container">
         <h1>Split Bill Calculator</h1>
         <div class="input-group">
-            <label for="billAmount" class="bill-label">What's your bill</label>
+            <label for="billAmount">What's your bill</label>
             <input type="number" id="billAmount" placeholder="Enter bill amount">
         </div>
         <div class="tip-selection">
-            <label class="tip-label">What's your tip (optional)</label>
-            <select id="tipPercentage">
-                <option value="0.10">10%</option>
-                <option value="0.12">12%</option>
-                <option value="0.15">15%</option>
-            </select>
+            <label id="tipText">What's your tip (optional)</label>
+            <div class="zip-slider">
+                <div class="zip-slider">
+                    <input type="range" id="tipRange" min="0" max="15" step="1" value="10" oninput="updateTipValue(this.value)">
+                    <!-- Tip percentage display -->
+                    <span id="tipPercentDisplay">10%</span>
+                </div>
+
+            </div>
+
+            
         </div>
         <div class="input-group">
-            <label for="peopleCount">For how many people to split</label>
+            <label for="peopleCount">For how many people split</label>
             <input type="number" id="peopleCount" value="2">
         </div>
         <button id="calculateBtn">Split</button>
