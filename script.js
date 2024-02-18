@@ -1,32 +1,50 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const billAmount = document.getElementById('billAmount');
-    const tipRange = document.getElementById('tipRange');
-    const peopleCount = document.getElementById('peopleCount');
-    const calculateBtn = document.getElementById('calculateBtn');
-    const resultDiv = document.getElementById('result');
-
-    let selectedTip = parseFloat(tipRange.value) / 100; // default tip is set by the range input value
-
-    tipRange.addEventListener('input', (e) => {
-        selectedTip = parseFloat(e.target.value) / 100;
+// Function to hide all screens and show only the one with the provided ID
+function showScreen(screenId) {
+    const screens = document.querySelectorAll('div[id$="Screen"]');
+    // Hide all screens
+    screens.forEach(screen => {
+      screen.style.display = 'none';
     });
-
-    calculateBtn.addEventListener('click', () => {
-        const bill = parseFloat(billAmount.value);
-        const people = parseInt(peopleCount.value);
-        const totalTip = bill * selectedTip;
-        const totalAmount = bill + totalTip;
-        const splitAmount = totalAmount / people;
-
-        resultDiv.innerText = `Each person should pay: $${splitAmount.toFixed(2)}`;
-    });
-});
-
-
-function updateTipValue(value) {
-    // Update the display of the tip percentage
-    document.getElementById('tipPercentDisplay').textContent = value + '%';
-
-    // Assuming you have a function to update the actual tip calculation
-    // updateTipCalculation(value);
-}
+  
+    // Show the requested screen
+    const screenToShow = document.getElementById(screenId);
+    screenToShow.style.display = 'block';
+  }
+  
+  // Function to move to the tip screen and optionally skip the tip input
+  function skipTip() {
+    document.getElementById('tipPercentage').value = "0";
+    showScreen('splitScreen');
+  }
+  
+  // Function to calculate and show the final amount each person should pay
+  function showFinalAmount() {
+    const billAmount = parseFloat(document.getElementById('billAmount').value);
+    const tipPercentage = parseFloat(document.getElementById('tipPercentage').value);
+    const splitCount = parseInt(document.getElementById('splitCount').value, 10);
+  
+    if (isNaN(billAmount) || isNaN(splitCount) || splitCount <= 0) {
+      alert("Please make sure to fill in all the fields correctly.");
+      return;
+    }
+  
+    const tipAmount = billAmount * (tipPercentage / 100);
+    const totalAmount = billAmount + tipAmount;
+    const amountPerPerson = totalAmount / splitCount;
+  
+    document.getElementById('finalAmount').textContent = `$${amountPerPerson.toFixed(2)}`;
+  
+    showScreen('finalScreen');
+  }
+  
+  // Event listener to update the tip value display as the range input changes
+  document.addEventListener('input', function (event) {
+    if (event.target.id === 'tipPercentage') {
+      const tipValueDisplay = document.getElementById('tipValue');
+      tipValueDisplay.textContent = `${event.target.value}%`;
+    }
+  });
+  
+  // Initially, we want to show only the welcome screen
+  showScreen('welcomeScreen');
+  
