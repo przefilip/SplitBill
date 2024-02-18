@@ -1,113 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=DM+Serif+Display:ital@0;1&display=swap');
-
 body {
-    font-family: 'Open Sans', 'Free Sans', sans-serif;
-    background-color: #060709; /* Dark background color */
-    color: #ffffff; /* White text */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-h1 {
-    font-family: 'DM Serif Display', serif;
-    font-style: italic;
-    color: #73FD07; /* Green color */
-    margin-bottom: 30px; /* Added space below the heading */
-    font-size: 2.5em; /* Larger font size for the heading */
-}
-
-.calculator-container {
+    font-family: Dm Sans, sans-serif;
     text-align: center;
-    padding: 40px; /* Increased padding */
-    border-radius: 8px;
-    max-width: 600px; /* Optional: Set a max-width for larger screens */
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 20px; /* Increased margin */
-    font-size: 1.5em; /* Larger font size for labels */
-    color: #626262; /* Dark color for labels */
-
-}
-
-.input-group input {
-    padding: 20px; /* Increased padding */
-    margin-bottom: 30px; /* Increased margin */
-    border: none;
-    border-radius: 50px;
-    background-color: #0E1014; /* Dark color for inputs */
-    color: #ffffff; /* White text for inputs */
-    font-size: 1.2em; /* Larger font size for inputs */
-    width: 90%; /* Adjust width as needed */
-    border: 1px solid #626262; /* Grey border for inputs */
-}
-
-#calculateBtn {
-    background-color: #73FD07; /* Bright green background for the button */
-    color: #000000; /* Black text for the button */
-    padding: 20px 40px; /* Increased padding */
-    border: none;
-    border-radius: 50px;
+    padding-top: 50px;
+    background-color: #f4f4f4;
+  }
+  
+  .welcome-message {
+    font-size: 72px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .subtext {
+    font-size: 32px;
+    color: #666;
+    margin-bottom: 50px;
+    margin-left: 500px;
+    margin-right: 500px;
+    font-weight: 500;
+  }
+  
+  .start-button {
+    font-size: 50px;
+    margin-top: -100px;
+    padding: 30px 50px;
+    background-color: black;
+    color: white;
+    border-radius: 100px;
+    border: 5px solid #00ff26;
+    box-shadow: 0px 15px #000000;
     cursor: pointer;
-    font-size: 1.5em; /* Larger font size for the button */
-    width: 95%; /* Adjust width as needed */
-    margin: auto; /* Center button if using a specific width */
-}
+    transition: background-color 0.3s ease;
 
-#result {
-    margin-top: 30px; /* Increased margin */
-    padding: 20px; /* Increased padding */
-    border-radius: 5px;
-    background-color: #222222; /* Even darker grey for the result area */
-    color: #73FD07; /* Green color for result text */
-    font-size: 1.3em; /* Larger font size for result text */
-    text-shadow: 1px 1px #626262; /* Grey stroke for result text */
-}
+  }
+  
+  .start-button:hover {
+    background-color: #00ff26;
+    animation: bounce; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+  }
+  
+  .blob {
+    background-color: #00ff26; /* Green blob color */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
 
-#tipText{
-    display: block;
-    margin-bottom: 20px; /* Increased margin */
-    font-size: 1.5em; /* Larger font size for labels */
-    color: #626262; /* Dark color for labels */
-
-}
-
-/* Thumb styling for Webkit browsers like Chrome and Safari */
-.zip-slider input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px; /* Size of the thumb */
-    height: 25px; /* Size of the thumb */
-    background: #73FD07; /* Green color for the thumb */
+    position: absolute;
+  }
+  
+  /* Additional blobs can be styled and positioned as needed */
+  /* Add to your existing CSS */
+.screen-hidden {
+    display: none;
+  }
+.skip-button{
+    font-size: 50px;
+    margin-top: -100px;
+    padding: 30px 50px;
+    background-color: #5c5c5c;
+    color: white;
+    border-radius: 100px;
+    box-shadow: 0px 13px #000000;
     cursor: pointer;
-    border-radius: 50%; /* Circular thumb */
-    border: 2px solid #626262; /* Grey border for the thumb */
-    transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease;
 }
-
-/* Thumb styling for Mozilla Firefox */
-.zip-slider input[type="range"]::-moz-range-thumb {
-    width: 25px; /* Size of the thumb */
-    height: 25px; /* Size of the thumb */
-    background: #73FD07; /* Green color for the thumb */
-    cursor: pointer;
-    border-radius: 50%; /* Circular thumb */
-    border: 2px solid #626262; /* Grey border for the thumb */
-    transition: background 0.3s ease-in-out;
-}
-
-/* Change the color of the thumb to green when it's active/being interacted with */
-.zip-slider input[type="range"]:active::-webkit-slider-thumb,
-.zip-slider input[type="range"]:focus::-webkit-slider-thumb {
-    background: #73FD07; /* Green color for the active thumb */
-}
-
-.zip-slider input[type="range"]:active::-moz-range-thumb,
-.zip-slider input[type="range"]:focus::-moz-range-thumb {
-    background: #73FD07; /* Green color for the active thumb */
-}
-
+.start-button:hover {
+    background-color: #000000;
+    animation: bounce; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */   
+  }
+  
